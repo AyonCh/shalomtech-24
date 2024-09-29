@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
+
+:root {
+  --background: #080609;
+  --text: #f1defc;
+  --primary: #d07ef7;
+  --secondary: #9d130c;
+  --accent: #fa143a;
+}
+
+* {
+  color: var(--text);
+  padding: 0;
+  margin: 0;
+  font-family: "Inter";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav {
+  background: #0806091a;
+  position: fixed;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  width: 92dvw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-inline: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  border-radius: 0.5rem;
+  border: 2px solid #d07ef71a;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .links {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      cursor: pointer;
+      transition-property: font-weight;
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in;
+    }
+
+    a:hover {
+      font-weight: 900;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .nav {
+    width: 96dvw;
+  }
+}

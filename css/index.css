@@ -23,6 +23,7 @@ a {
 body {
   background: var(--background);
   color: var(--text);
+  overflow-x: hidden;
 }
 
 html {
@@ -42,7 +43,7 @@ html {
   transform: translateX(-50%);
   top: 30px;
   border-radius: 0.5rem;
-  border: 2px solid #d07ef71a;
+  border: 1px solid #d07ef71a;
 }
 
 nav {
@@ -71,6 +72,91 @@ nav {
   padding-top: 150px;
 }
 
+.hero>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .links>* {
+    padding: 10px 40px;
+    border-radius: 10px;
+  }
+
+  .links>a:first-child {
+    background: linear-gradient(to bottom right,
+        rgba(208, 126, 247, 0.7),
+        rgba(250, 20, 58, 0.7));
+  }
+
+  .links>a:last-child {
+    border: 1px solid rgba(208, 126, 247, 0.5);
+  }
+
+  img {
+    position: absolute;
+    z-index: -3;
+    border-radius: 50%;
+    opacity: 65%;
+    right: -200px;
+    top: -200px;
+    mask: radial-gradient(white 0%, transparent 40%);
+    height: 900px;
+    width: 900px;
+  }
+
+  .cloth1 {
+    height: 900px;
+    width: 900px;
+    right: -200px;
+    top: -200px;
+    rotate: -10deg;
+  }
+
+  .cloth3 {
+    right: 150px;
+    top: -500px;
+    height: 950px;
+    width: 950px;
+    rotate: -8deg;
+  }
+
+  .cloth4 {
+    right: 550px;
+    top: -300px;
+    height: 900px;
+    mask: radial-gradient(white 0%, transparent 70%);
+    rotate: -9deg;
+  }
+
+  .cloth2 {
+    right: -200px;
+    top: -600px;
+    height: 950px;
+    width: 950px;
+    rotate: -10deg;
+  }
+}
+
+.hero>div>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 900px;
+  gap: 1.25rem;
+
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+  }
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -79,13 +165,75 @@ footer {
 }
 
 @media (min-width: 640px) {
-  .nav {
-    width: 96dvw;
-  }
-
   main {
     display: grid;
     grid-template-rows: 1fr auto;
     min-height: 100dvh;
   }
+
+  .hero>div>div h1 {
+    font-size: 100px;
+  }
+}
+
+.title {
+  background: radial-gradient(#f1defc 0%, transparent 200%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 50%;
+  width: 1000px;
+  height: 1000px;
+  margin-left: -5px;
+  background-image: url("/images/glow.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  z-index: -2;
+  opacity: 20%;
+}
+
+.grid-lattice::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  transform: translateX(-50%);
+  height: 100dvh;
+  width: 100dvw;
+  background-image: url("/images/grid.png");
+  background-position: center;
+  background-size: contain;
+  z-index: -2;
+  opacity: 20%;
+  mask-image: radial-gradient(black, transparent 60%);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  border: 0.5px solid rgba(208, 126, 247, 0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(208, 126, 247, 0.1);
+
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(208, 126, 247, 0.2);
 }

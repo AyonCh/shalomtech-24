@@ -71,6 +71,12 @@ nav {
   }
 }
 
+main {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100dvh;
+}
+
 .hero {
   padding-top: 150px;
 }
@@ -153,11 +159,6 @@ nav {
   text-align: center;
   max-width: 900px;
   gap: 2rem;
-
-  h1 {
-    font-size: 60px;
-    font-weight: bold;
-  }
 }
 
 .text {
@@ -175,9 +176,213 @@ article {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.shop_card {
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 10px;
+  background: #00000033;
+  backdrop-filter: blur(10px);
+
+  img {
+    border-radius: 5px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  div>p {
+    cursor: pointer;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  border-top: 1px solid #d07ef71a;
+}
+
+@media (max-width: 450px) {
+  .cloth {
+    display: none;
+  }
+
+  h1,
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  .text>p {
+    width: 375px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  /**/
+  /* .card>img { */
+  /*   display: none; */
+  /* } */
+
+  .card>p {
+    text-align: center;
+  }
+
+  .glow::after {
+    display: hidden;
+  }
+}
+
+@media (max-width: 650px) and (min-width: 450px) {
+  .glow::after {
+    display: hidden;
+  }
+
+  .cloth {
+    display: none;
+  }
+
+  h1,
+  h2 {
+    font-size: 30px;
+  }
+
+  .text>p {
+    width: 375px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  /**/
+  /* .card>img { */
+  /*   display: none; */
+  /* } */
+
+  .card>p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 650px) {
+
+  .cloth1,
+  .cloth2 {
+    display: none;
+  }
+
+  .glow::after {
+    display: none;
+  }
+
+  /* body { */
+  /*   background-image: none; */
+  /*   overflow-x: hidden; */
+  /* } */
+
+  /* .nav { */
+  /*   display: none; */
+  /* } */
+
+  h1,
+  h2 {
+    font-size: 60px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  /**/
+  /* .card>img { */
+  /*   display: none; */
+  /* } */
+
+  .card>p {
+    text-align: center;
+  }
+}
+
+@media (min-width: 950px) {
+
+  /* nav { */
+  /*   width: 92dvw; */
+  /*   background: white; */
+  /* } */
+  .glow::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 50%;
+    width: 1000px;
+    height: 1000px;
+    margin-left: -5px;
+    background-image: url("/images/glow.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    z-index: -2;
+    opacity: 20%;
+  }
 
   h1 {
-    font-size: 50px;
+    font-size: 100px;
+  }
+
+  h2 {
+    font-size: 60px;
+  }
+
+  p {
+    font-size: 20px;
   }
 
   .card {
@@ -194,54 +399,11 @@ article {
   }
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 1.25rem;
-  border-top: 1px solid #d07ef71a;
-}
-
-@media (min-width: 640px) {
-  main {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    min-height: 100dvh;
-  }
-
-  /* nav { */
-  /*   width: 92dvw; */
-  /*   background: white; */
-  /* } */
-
-  .hero>div>div h1 {
-    font-size: 100px;
-  }
-}
-
 .title {
   background: radial-gradient(#f1defc 0%, transparent 200%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.glow::after {
-  content: "";
-  position: absolute;
-  top: -30%;
-  left: 50%;
-  transform: translateX(-50%);
-  right: 50%;
-  width: 1000px;
-  height: 1000px;
-  margin-left: -5px;
-  background-image: url("/images/glow.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  z-index: -2;
-  opacity: 20%;
 }
 
 .grid-lattice::after {

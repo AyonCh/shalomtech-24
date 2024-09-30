@@ -22,6 +22,9 @@ a {
 
 body {
   background: var(--background);
+  background-image: url("/images/mesh.png");
+  background-repeat: repeat;
+  background-position-y: -200px;
   color: var(--text);
   overflow-x: hidden;
 }
@@ -34,7 +37,7 @@ html {
   background: #0806091a;
   position: fixed;
   z-index: 10;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   width: 92dvw;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -165,13 +168,29 @@ nav {
   gap: 1rem;
 }
 
-article>div {
+article {
+  padding-top: 100px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   h1 {
     font-size: 50px;
+  }
+
+  .card {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 2.5rem;
+    width: 950px;
+  }
+
+  .card:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+    text-align: right;
   }
 }
 
